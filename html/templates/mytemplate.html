@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HEX GENERATION FILE LOG REPORT</title>
+    <link type="text/css" rel="stylesheet" href="mystyle.css"/>
+    <meta charset="utf-8"/>  
+    <style type="text/css">
+        body { background: #eee}
+      .container {
+        max-width: 500px;
+        padding-top: 100px;
+      }
+      h2 {color: red;}
+<!--         table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        } -->
+       {% include "mystyle.css" %}
+    </style>
+</head>
+    
+<body>
+<h1 id='BorgWarner'>BorgWarner</h1>
+<center>
+    <h1>HEX GENERATION FILE LOG REPORT</h1>
+    <p>{{ urls|length }} links</p>
+</center>
+<ol align="left">
+{% set counter = 0 -%}
+{% for url in urls -%}
+<li><a href="{{ url }}">{{ url }}</a></li>
+{% set counter = counter + 1 -%}
+{% endfor -%}
+</ol>
+
+<h3 style="color:blue;">Enviroment Variables</h3>
+
+<!-- <p> {{ envars }}</p> -->
+ <ol align="left">
+  {% for key,value in envars.items() -%}
+     {% if key == 'LOGNAME' %}
+        <li style="color:green;font-size: 20px;">{{ key }} : {{ value }}</li>
+     {% else %}
+        <li>{{ key }} : {{ value }}</li>
+     {% endif %}
+  {% endfor -%}
+  </ol>
+
+
+<h3 style="color:blue;">GIT HASH</h3>
+
+<h3 style="color:blue;">MY TABLE</h3>
+
+<table id="#myTable">
+    <tr>
+        <th>Date</th>
+        <th>Value</th> 
+    </tr>
+    {% for item in items %}
+    <tr>
+       <td>{{item.date}}</td>
+       <td>{{item.id}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<h3 style="color:blue;">ANOTHER TABLE</h3>
+<div class="wrapper">
+  <div class="table">
+    <div class="row header darkgrey">
+      <div class="cell">Date</div>
+      <div class="cell">Value</div>
+    </div>
+    {% for item in items %}
+    <div class="row">
+     <div class="cell">{{item.date}}</div>
+     <div class="cell">{{item.id}}</div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+</body>
+</html>

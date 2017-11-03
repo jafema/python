@@ -1,0 +1,116 @@
+body { background: #2b2b2b}
+
+h1{
+  font-family: Verdana,sans-serif;
+  color: #530EE8;
+}
+
+li{
+    font-size: 12px;
+    color: #2b2b2b;
+    /*padding: 0.5em;*/
+    margin: 0.5em 4em;
+  
+}
+
+#BorgWarner{
+
+
+	border-left: 1px solid #555;
+	border-right: 1px solid #777;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0 1px 0 #999;
+    color: #eee;
+        font-family: "Helvetica Neue", Helvetica, Arial;
+    font-weight: bold;
+    background: #0000bb;
+background: linear-gradient(#0bb, #111);
+/*background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));*/
+    width: 100%;
+    padding: 10px 12px;
+text-shadow: 0 1px 0 #000;	
+
+background: rgba(32,124,229,1);
+background: -moz-linear-gradient(top, rgba(32,124,229,1) 24%, rgba(0,0,187,1) 82%);
+background: -webkit-gradient(left top, left bottom, color-stop(24%, rgba(32,124,229,1)), color-stop(82%, rgba(0,0,187,1)));
+background: -webkit-linear-gradient(top, rgba(32,124,229,1) 24%, rgba(0,0,187,1) 82%);
+background: -o-linear-gradient(top, rgba(32,124,229,1) 24%, rgba(0,0,187,1) 82%);
+background: -ms-linear-gradient(top, rgba(32,124,229,1) 24%, rgba(0,0,187,1) 82%);
+background: linear-gradient(to bottom, rgba(32,124,229,1) 24%, rgba(0,0,187,1) 82%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#0000bb', GradientType=0 );
+}
+
+#myTable{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:30%;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background: #e9e9e9;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+.row.darkgrey {
+  background: #2b2b2b;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+}
