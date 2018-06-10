@@ -8,11 +8,13 @@ https://colorlib.com/wp/css3-table-templates/
 
 https://codepen.io/lukepeters/pen/bfFur?editors=0100
 
+https://plot.ly/javascript/time-series/
 
 """
 import os, sys
 from jinja2 import Environment, FileSystemLoader
 from collections import namedtuple
+
 
 data = namedtuple('data','date id')
 
@@ -32,13 +34,19 @@ def create_index_html():
     items=[data('16-06-2017','85')]
     items.append(data('17-06-2017','95'))
     items.append(data('18-06-2017','105'))
+    dataPieMio = {'javi':33,
+                  'eSTC': 15,
+                  'casa':20}
+
+
     fname = "hex_file_generation_log_report.html"
     urls = ['http://example.com/1', 'http://example.com/2', 'http://example.com/3']
     envars = os.environ
     context = {
         'urls': urls,
         'envars': envars,
-        'items': items
+        'items': items,
+        'dataPieMio': dataPieMio
     }
     #
     with open(fname, 'w') as f:
@@ -46,10 +54,11 @@ def create_index_html():
         f.write(html)
 
 
-    
+   
 
 def main():
     create_index_html()
+
  
 ########################################
  
