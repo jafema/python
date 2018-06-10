@@ -121,13 +121,15 @@
   <script>
   var dataForPie = [];
   var labelForPie = [];
-   {% for key,value in dataPieMio.items() -%}
+/*    {% for key,value in dataPieMio.items() -%}
     labelForPie.push( {{ key }} );
   	dataForPie.push({{ value }} );
-  {% endfor %}
+  {% endfor %} */
   
-    dataForPie = {{ dataPieMio.javi}};
-    labelForPie = ['a','b','c'];
+    dataForPie = {{ dataPieMio.values()}};
+    //dataForPie = ['3','4'];
+    //labelForPie = ['a'];
+    labelForPie = {{ dataPieMio.keys()}};
     <!-- JAVASCRIPT CODE GOES HERE -->
     var data = [{
     	  values: dataForPie,
