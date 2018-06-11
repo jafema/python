@@ -175,5 +175,34 @@
     		Plotly.newPlot('plotLines', data, layout);
   </script>
   
+    <h3 style="color:blue;">JAVASCRIPT PLOT lines data from data set</h3> 
+    
+    <div id="plotLines2"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    <!-- JAVASCRIPT CODE GOES HERE -->
+    	  var trace1 = {
+    		  x: {{ l_time }},
+    		  y: {{ l_CO }},
+    		  mode: 'markers',
+    		  name: 'CO'
+    		};
+
+    	  var trace2 = {
+        		  x: {{ l_time }},
+        		  y: {{ l_NMHC }},
+        		  mode: 'markers',
+        		  name: 'NMHC'
+        		};
+
+    		var data = [ trace1, trace2];
+
+    		var layout = {
+    		  title:'Data from Sensors'
+    		};
+
+    		Plotly.newPlot('plotLines2', data, layout);
+  </script>
+  
+  
 </body>
 </html>
