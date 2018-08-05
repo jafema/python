@@ -24,6 +24,11 @@ l_time=[]
 l_CO=[]
 l_NMHC=[]
 
+
+l_PWM = []
+l_duty = []
+l_samples = []
+
 #df = pd.read_csv('/pyhtml/html/AirQualityUCI 2/AirQualityUCI.csv')
 
 data = namedtuple('data','date id')
@@ -59,7 +64,10 @@ def create_index_html():
         'dataPieMio': dataPieMio,
         'l_time': l_time,
         'l_CO':l_CO,
-        'l_NMHC':l_NMHC
+        'l_NMHC':l_NMHC,
+        'l_PWM':l_PWM,
+        'l_duty':l_duty,
+        'l_samples': l_samples
     }
     #
     with open(fname, 'w') as f:
@@ -84,14 +92,18 @@ def PWM_plot():
     times_PWM_call_perCycle = T_cycle / T_PWM_timer
     duty = 0;
     output = 0;
+    index = 0;
     
-    l_PWM = []
-    l_duty = []
+    #l_PWM = []
+    #l_duty = []
     
     for duty in range(100+1):
         output = duty
         
         for cont in range(int(times_PWM_call_perCycle)):
+
+            l_samples.append(index)
+            index +=1;
             output -=1;
             if output >= 1:
                 l_PWM.append(1)
@@ -118,11 +130,11 @@ def PWM_plot():
     
     
     
+    
 
 def main():
-    
-    get_data_from_csv()
     PWM_plot()
+    get_data_from_csv()
     create_index_html()
 
 

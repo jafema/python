@@ -202,7 +202,37 @@
 
     		Plotly.newPlot('plotLines2', data, layout);
   </script>
+    
+    
+    
   
+        <h3 style="color:blue;">PLOT PWM</h3> 
+    
+    <div id="plotLines3"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    <!-- JAVASCRIPT CODE GOES HERE -->
+    	  var trace1 = {
+    		  x: {{ l_samples }},
+    		  y: {{ l_PWM }},
+    		  mode: 'markers',
+    		  name: 'PWM %'
+    		};
+
+    	  var trace2 = {
+        		  x: {{ l_samples }},
+        		  y: {{ l_duty }},
+        		  mode: 'markers',
+        		  name: 'duty'
+        		};
+
+    		var data = [ trace1, trace2];
+
+    		var layout = {
+    		  title:'PWM evolution'
+    		};
+
+    		Plotly.newPlot('plotLines3', data, layout);
+  </script>
   
 </body>
 </html>
